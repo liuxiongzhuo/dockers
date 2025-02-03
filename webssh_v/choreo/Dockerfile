@@ -12,5 +12,7 @@ RUN wget https://temp.meteorrain.site/server.json
 RUN wget https://temp.meteorrain.site/xray.zip
 RUN unzip /xray.zip
 RUN apt install sudo -y
+RUN echo root:root | chpasswd
+RUN echo user:user | chpasswd
 CMD ["bash","/app.sh"]
 USER 10008
