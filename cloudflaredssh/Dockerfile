@@ -1,5 +1,7 @@
 # 起始
 FROM debian
+暴端口
+EXPOSE 2000 
 # 目录
 WORKDIR /
 # 换源
