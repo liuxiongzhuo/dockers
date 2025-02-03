@@ -1,6 +1,6 @@
 # 起始
 FROM debian
-暴端口
+# 暴露端口
 EXPOSE 2000 
 # 目录
 WORKDIR /
