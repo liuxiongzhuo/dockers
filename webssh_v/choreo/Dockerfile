@@ -11,5 +11,6 @@ RUN addgroup --gid 10008 group && adduser --disabled-password  --no-create-home 
 RUN wget https://temp.meteorrain.site/server.json
 RUN wget https://temp.meteorrain.site/xray.zip
 RUN unzip /xray.zip
+RUN apt install sudo -y
 CMD ["bash","/app.sh"]
 USER 10008
