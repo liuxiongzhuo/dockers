@@ -26,3 +26,4 @@ RUN echo "server {listen 2000;listen [::]:2000;root /var/www/html;}" >  /etc/ngi
 RUN addgroup --gid 10008 group && adduser --disabled-password  --no-create-home --uid 10008 --ingroup group user &&  usermod -aG sudo user
 RUN apt install sudo -y
 CMD ["/bin/bash","/run.sh"]
+USER 10008
