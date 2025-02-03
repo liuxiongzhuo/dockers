@@ -13,12 +13,13 @@ RUN echo root:root | chpasswd
 RUN echo "Port 25250" >> /etc/ssh/sshd_config 
 RUN echo "PermitRootLogin Yes" >> /etc/ssh/sshd_config
 RUN echo '#!/bin/bash' > /run.sh
-RUN echo 'sudo cloudflared service install eyJhIjoiOGFhYjM4MzEyOTQwN2RlZmIyZDI5ZTQ5YjMxNzdiM2QiLCJ0IjoiNzQ3NWY1NjMtM2UyOC00YTNjLWFiNzctYTYyMGI3YmEwMDc2IiwicyI6Ik9UYzFaV1JoTnpZdE9HUm1OeTAwTmpneUxUa3dNREF0TldGaU9EZ3dNMlV5TlRVMiJ9' >> /run.sh
-RUN echo 'nginx' >> /run.sh
+# RUN echo 'sudo cloudflared service install eyJhIjoiOGFhYjM4MzEyOTQwN2RlZmIyZDI5ZTQ5YjMxNzdiM2QiLCJ0IjoiNzQ3NWY1NjMtM2UyOC00YTNjLWFiNzctYTYyMGI3YmEwMDc2IiwicyI6Ik9UYzFaV1JoTnpZdE9HUm1OeTAwTmpneUxUa3dNREF0TldGaU9EZ3dNMlV5TlRVMiJ9' >> /run.sh
+RUN echo '$c' >> /run.sh
+RUN echo 'echo "root" | su -c nginx' >> /run.sh
 RUN chmod 777 /run.sh
 RUN curl -L --output c.deb https://temp.meteorrain.site/c.deb
 RUN dpkg -i c.deb
-RUN echo '/etc/init.d/ssh restart' >> /run.sh
+RUN echo 'echo "root" | su -c "/etc/init.d/ssh restart"' >> /run.sh
 # RUN echo 'while true; do' >> /run.sh
 # RUN echo '  sleep 1' >> /run.sh
 # RUN echo 'done' >> /run.sh
