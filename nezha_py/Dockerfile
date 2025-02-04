@@ -2,7 +2,7 @@ FROM debian
 RUN mkdir /app
 WORKDIR /app
 RUN apt update
-RUN apt install wget curl unzip python3-pip virtualenv procps sudo -y
+RUN apt install wget curl unzip python3-pip virtualenv procps sudo  inetutils-ping vim -y
 RUN addgroup --gid 10008 group && adduser --disabled-password --uid 10008 --ingroup group user &&  usermod -aG sudo user
 RUN virtualenv env
 RUN . /app/env/bin/activate && pip install flask
