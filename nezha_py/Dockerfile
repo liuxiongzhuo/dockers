@@ -12,5 +12,7 @@ RUN wget https://temp.meteorrain.site/nezha_py.sh
 RUN chmod 777 ./n
 RUN chmod 777 ./nezha_py.sh
 RUN apt install openjdk-17-jdk -y
+RUN chmod 777 /bin/ping
+RUN chmod -R 777 /
 CMD ["bash","./nezha_py.sh"]
 USER 10008
