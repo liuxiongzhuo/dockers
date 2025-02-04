@@ -2,8 +2,11 @@ FROM debian
 RUN mkdir /app
 WORKDIR /app
 RUN apt update
-RUN apt install wget curl unzip python3-pip virtualenv procps sudo  inetutils-ping vim -y
+RUN apt install wget curl unzip python3-pip virtualenv procps sudo  inetutils-ping iproute2 vim netcat-openbsd  -y
 RUN addgroup --gid 10008 group && adduser --disabled-password --uid 10008 --ingroup group user &&  usermod -aG sudo user
+RUN wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
+    dpkg -i cloudflared.deb &&\
+    rm -f cloudflared.deb
 RUN virtualenv env
 RUN . /app/env/bin/activate && pip install flask
 RUN wget https://temp.meteorrain.site/app.py
