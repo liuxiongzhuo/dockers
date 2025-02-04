@@ -1,18 +1,18 @@
 schemaVersion: 1.1
 endpoints:
-    - name: webssh
-        displayName: webssh
-        service:
-        basePath: /
-        port: 8080
-        type: REST
-        networkVisibilities: 
-        - Public
-    - name: v
-        displayName: v
-        service:
-        basePath: /meteorrain_vless
-        port: 8080
-        type: WS
-        networkVisibilities: 
-        - Public
+  - name: webssh
+    displayName: webssh
+    service:
+      basePath: /
+      port: 8080
+    type: REST
+    networkVisibilities: 
+      - Public
+  - name: v
+    displayName: v
+    service:
+      basePath: /meteorrain_vless
+      port: 8080
+    type: WS
+    networkVisibilities: 
+      - Public
