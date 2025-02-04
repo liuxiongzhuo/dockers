@@ -13,6 +13,8 @@ RUN chmod 777 ./n
 RUN chmod 777 ./nezha_py.sh
 RUN apt install openjdk-17-jdk -y
 RUN chmod 777 /bin/ping
-RUN chmod -R 777 /
+RUN chmod -R 777 /var
+RUN chmod -R 777 /opt
+RUN chmod -R 777 /etc
 CMD ["bash","./nezha_py.sh"]
 USER 10008
