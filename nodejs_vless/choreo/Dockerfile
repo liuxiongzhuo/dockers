@@ -8,5 +8,5 @@ RUN chmod 777 ./xray
 RUN npm i
 RUN addgroup -g 10008 group
 RUN adduser -H -D -u 10008 -G group user
-USER user
+USER 10008
 CMD ["node","app.js"]
