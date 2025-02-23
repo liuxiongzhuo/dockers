@@ -16,7 +16,7 @@
                 "decryption": "none"
             },
             "streamSettings": {
-                "network": "raw"
+                "network": "grpc"
             }
         }
     ],
